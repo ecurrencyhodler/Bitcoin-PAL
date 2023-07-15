@@ -1,7 +1,7 @@
 # boltfun-ai
 For the bolt.fun hackathon, hackers are challenged to revolutionize how we use Bitcoin and AI. Our project will contain two parts:
-1. An incentivized crowd-sourced training model for LLM’s using bitcoin. This will be the main focus of our project.
-2. A user-facing bitcoin education platform as well as a method for people to crowdsource data.
+1. A user-facing bitcoin education platform.
+2. An incentivized crowd-sourced training model for LLM’s using bitcoin. This will be the main focus of our project.
 
 # Resources
 1. [Project Charter and User Stories](https://docs.google.com/document/d/1SNIwo1evh4KxonslYy0HhbsHSHQuQU8B6TuFWWzATPM/edit?usp=sharing)
