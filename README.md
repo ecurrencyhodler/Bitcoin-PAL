@@ -9,5 +9,5 @@ For the bolt.fun hackathon, hackers are challenged to revolutionize how we use B
 3. [Minutes](https://drive.google.com/drive/folders/12LQ3hKL0cr6ejYoy8LkDnJUkfYg9o0bU?usp=sharing)
 4. [Project Board](https://github.com/users/ecurrencyhodler/projects/4)
 
-#License
+# License
 Bitcoin PAL is released under the terms of the MIT license. See [LICENSE](https://github.com/ecurrencyhodler/Bitcoin-PAL/blob/main/LICENSE) for more information or see https://opensource.org/licenses/MI
