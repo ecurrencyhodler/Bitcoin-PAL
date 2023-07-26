@@ -67,6 +67,8 @@ The back end server is required to be running also in order for the front end to
 
 ### Install and Usage - Console
 1. git clone this repo
+2. cd to this repo directory
+3. `cd frontend-simple` - change directory to the front end
 2. `npm install ` - installs all node modules
 3. `npm start`- starts front end on localhost:3000
 4. Navigate to `http://localhost:3000` and ask your question
