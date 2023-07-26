@@ -40,13 +40,6 @@ The backend can be used a standalone console or a python flask based webservice.
 
 	Note: because of the way `langchain` loads the `SentenceTransformers` embeddings, the first time you run the script it will require internet connection to download the embeddings model itself.
 
-### Usage - Console
-1. `python3 bitcoinPAL.py`
-2. Ask your question on the command line
-
-### Screenshot
-<img src="https://github.com/ecurrencyhodler/Bitcoin-PAL/blob/main/img/console.png?raw=true" alt="A console based AI chat tool for bitcoin education" width="600">
-
 ### Usage - Ingestion 
 To ingest custom documentation the `source_documents` folder must be populated first and ingestion must be ran. 
 1. `python3 ingest.py`
@@ -54,13 +47,20 @@ To ingest custom documentation the `source_documents` folder must be populated f
 ### Screenshot
 <img src="https://github.com/ecurrencyhodler/Bitcoin-PAL/blob/main/img/ingest.png?raw=true" alt="A console based AI document ingestion tool" width="600"> 
 
+### Usage - Console
+1. `python3 bitcoinPAL.py`
+2. Ask your question on the command line
+
+### Screenshot
+<img src="https://github.com/ecurrencyhodler/Bitcoin-PAL/blob/main/img/console.png?raw=true" alt="A console based AI chat tool for bitcoin education" width="600">
+
 ### Usage - Server
 1. `python3 server.py`
 2.  Ask a question by submitting a curl command with a json payload to localhost:8000
 	`curl -X POST -H "Content-Type: application/json" -d '{"query":"What is bitcoin?"}' http://localhost:8000`
 
 ### Screenshot
-TBD
+<img src="https://github.com/ecurrencyhodler/Bitcoin-PAL/blob/main/img/server.png?raw=true" alt="A console based curl query to the back end server" width="600">
 
 ## Front End - Client
 The back end server is required to be running also in order for the front end to talk to API for querying. 
