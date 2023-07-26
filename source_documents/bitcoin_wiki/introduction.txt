@@ -1,0 +1,67 @@
+Basic Concepts
+Currency
+Alice wants to buy the Alpaca socks which Bob has for sale. In return, she must provide something of equal value to Bob. The most efficient way to do this is by using a medium of exchange that Bob accepts which would be classified as currency. Currency makes trade easier by eliminating the need for coincidence of wants required in other systems of trade such as barter. Currency adoption and acceptance can be global, national, or in some cases local or community-based.
+
+Banks
+Alice need not provide currency to Bob in-person. She may instead transfer this value by first entrusting her currency to a bank who promises to store and protect Alice's currency notes. The bank gives Alice a written promise (called a "bank statement") that entitles her to withdraw the same number of currency bills that she deposited. Since the money is still Alice's, she is entitled to do with it whatever she pleases, and the bank (like most banks), for a small fee, will do Alice the service of passing on the currency bills to Bob on her behalf. This is done by Alice's bank by giving the dollar bills to Bob's bank and informing them that the money is for Bob, who will then see the amount the next time he checks his balance or receives his bank statement.
+
+Since banks have many customers, and bank employees require money for doing the job of talking to people and signing documents, banks in recent times have been using machines such as ATMs and web servers that do the job of interacting with customers instead of paid bank employees. The task of these machines is to learn what each customer wants to do with their money and, to the extent that it is possible, act on what the customer wants (for example, ATMs can hand out cash). Customers can always know how much money they have in their accounts, and they are confident that the numbers they see in their bank statements and on their computer screens accurately reflect the number of dollars that they can get from the bank on demand. They can be so sure of this that they can accept those numbers in the same way they accept paper banknotes (this is similar to the way people started accepting paper dollars when they had been accepting gold or silver).
+
+Such a system has several disadvantages:
+
+It is costly. EFTs in Europe can cost 25 euros. Credit transactions can cost several percent of the transaction.
+It is slow. Checking and low cost wire services take days to complete.
+In most cases, it cannot be anonymous.
+Accounts can be frozen, or their balance partially or wholly confiscated.
+Banks and other payment processors like PayPal, Visa, and Mastercard may refuse to process payments for certain legal entities.
+
+Bitcoin is a system of owning and voluntarily transferring amounts of so-called bitcoins, in a manner similar to an on-line banking, but pseudonymously and without reliance on a central authority to maintain account balances. If bitcoins are valuable, it is because they are useful and limited in supply.
+
+Bitcoin Basics
+Creation of coins
+The creation of coins must be limited for the currency to have any value.
+
+New coins are slowly mined into existence by following a mutually agreed-upon set of rules. A user mining bitcoins is running a software program that searches for a solution to a very difficult math problem the difficulty of which is precisely known. This difficulty is automatically adjusted on a predictable schedule so that the number of solutions found globally for a given unit of time is constant: the global system aims for 6 per hour. When a solution is found, the user may tell everyone of the existence of this newly found solution along with other information packaged together in what is called a "block". The solution itself is a proof-of-work or PoW. It is hard to find, but easy to verify.
+
+Blocks create 6.25 new bitcoins at present [July 2023]. This amount, known as the block reward, is an incentive for people to perform the computation work required for generating blocks. Roughly every 4 years, the number of bitcoins that can be "mined" in a block reduces by 50%. Originally the block reward was 50 bitcoins; it halved in November 2012; it then halved again in July 2016. Any block that is created by a malicious user that does not follow this rule (or any other rules) will be rejected by everyone else. In the end, no more than 21 million bitcoins will ever exist.
+
+Because the block reward will decrease over the long term, miners will some day instead pay for their hardware and electricity costs by collecting transaction fees. The sender of money may voluntarily pay a small transaction fee which will be kept by whoever finds the next block. Paying this fee will encourage miners to include the transaction in a block more quickly.
+
+Sending payments
+To guarantee that a third-party, let's call her Eve, cannot spend other people's bitcoins by creating transactions in their names, Bitcoin uses public key cryptography to make and verify digital signatures. In this system, each person, such as Alice or Bob, has a wallet with one or more private keys. Only the user with the private key can sign a transaction to give some of their bitcoins to somebody else, but anyone can validate the signature using that user’s public key.
+
+Suppose Alice wants to send a bitcoin to Bob.
+
+Bob sends his address to Alice.
+Alice adds Bob’s address and the amount of bitcoins to transfer to a message: a 'transaction' message.
+Alice signs the transaction with her private key.
+Alice broadcasts the transaction on the Bitcoin network for all to see.
+(Only the first two steps require human action. The rest is done by the Bitcoin client software.)
+
+Looking at this transaction from the outside, anyone who knows that this address belongs to Bob can see that someone has agreed to transfer the amount to Bob, because nobody else has the correct private key. Alice would be foolish to give her private key to other people, as this would allow them to sign transactions, removing funds from her control.
+
+Later on, when Bob wishes to transfer the same bitcoins to Charley, he will do the same thing:
+
+Charlie sends Bob his address.
+Bob adds Charlie's address and the amount of bitcoins to transfer to a message: a 'transaction' message.
+Bob signs the transaction with his private key.
+Bob broadcasts the transaction on the Bitcoin network for all to see.
+Only Bob can do this because only he has the private key that can create a valid signature for the transaction.
+
+Eve cannot change whose coins these are by replacing Bob’s address with her address, because Alice signed the transfer to Bob using her own private key, which is kept secret from Eve, and instructing that the coins which were hers now belong to Bob. So, if Charlie accepts that the original coin was in the hands of Alice, he will also accept the fact that this coin was later passed to Bob, and now Bob is passing this same coin to him.
+
+Preventing double-spending
+The process described above does not prevent Alice from using the same bitcoins in more than one transaction. The following process does; this is the primary innovation behind Bitcoin.
+
+Details about the transaction are sent and forwarded to all or as many other computers as possible.
+A constantly growing chain of blocks that contains a record of all transactions is collectively maintained by all computers (each has a full copy).
+To be accepted in the chain, transaction blocks must be valid and must include proof of work (one block generated by the network every 10 minutes).
+Blocks are chained in a way so that, if any one is modified, all following blocks will have to be recomputed.
+When multiple valid continuations to this chain appear, only the longest such branch is accepted and it is then extended further.
+When Bob sees that his transaction has been included in a block, which has been made part of the single longest and fastest-growing block chain (extended with significant computational effort), he can be confident that the transaction by Alice has been accepted by the computers in the network and is permanently recorded, preventing Alice from creating a second transaction with the same coin. In order for Alice to thwart this system and double-spend her coins, she would need to muster more computing power than all other Bitcoin users combined.
+
+Anonymity
+When it comes to the Bitcoin network itself, there are no "accounts" to set up, and no e-mail addresses, user-names or passwords are required to hold or spend bitcoins. Each balance is simply associated with an address and its public-private key pair. The money "belongs" to anyone who has the private key and can sign transactions with it. Moreover, those keys do not have to be registered anywhere in advance, as they are only used when required for a transaction. Transacting parties do not need to know each other's identity in the same way that a store owner does not know a cash-paying customer's name.
+
+Capitalization / Nomenclature
+Since Bitcoin is both a currency and a protocol, capitalization can be confusing. Accepted practice is to use Bitcoin (singular with an upper case letter B) to label the protocol, software, and community, and bitcoins (with a lower case b) to label units of the currency.
