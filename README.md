@@ -45,7 +45,14 @@ The backend can be used a standalone console or a python flask based webservice.
 2. Ask your question on the command line
 
 ### Screenshot
-TBD
+<img src="https://github.com/ecurrencyhodler/Bitcoin-PAL/blob/main/img/console.png?raw=true" alt="A console based AI chat tool for bitcoin education" width="600">
+
+### Usage - Ingestion 
+To ingest custom documentation the `source_documents` folder must be populated first and ingestion must be ran. 
+1. `python3 ingest.py`
+
+### Screenshot
+<img src="https://github.com/ecurrencyhodler/Bitcoin-PAL/blob/main/img/ingest.png?raw=true" alt="A console based AI document ingestion tool" width="600"> 
 
 ### Usage - Server
 1. `python3 server.py`
@@ -65,7 +72,7 @@ The back end server is required to be running also in order for the front end to
 4. Navigate to `http://localhost:3000` and ask your question
 
 ### Screenshot
-TBD
+<img src="https://github.com/ecurrencyhodler/Bitcoin-PAL/blob/main/img/frontend.png?raw=true" alt="A react based front end for querying user input" width="600">
 
 # Note
 This software has no guarantees and was created during a hackathon. All software should be considered beta unless otherwise explicitly specified. The user assumes all risk by executing any code contained in this repository. 
