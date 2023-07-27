@@ -1,6 +1,6 @@
 # Bitcoin PAL
 For the bolt.fun hackathon, hackers are challenged to revolutionize how we use Bitcoin and AI. Our project will contain two parts:
-1. A user-facing bitcoin education platform.
+1. A user-facing bitcoin education platform a.k.a. Bitcoin PAL (Personalized Assistant for Learning)
 2. An incentivized crowd-sourced training model for LLM’s using bitcoin. This will be the main focus of our project.
 
 # Resources
