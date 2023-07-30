@@ -31,7 +31,7 @@ function sidebar() {
 
   return (
     <div>
-      <Card className="w-64 md:w-72  h-full ">
+      <Card className="w-64 md:w-72  h-full hidden md:inline-block">
         <CardHeader>
           <CardTitle>
             <img

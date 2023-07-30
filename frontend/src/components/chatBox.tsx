@@ -63,15 +63,15 @@ function ChatBox() {
     <div className="w-full flex flex-col max-h-screen overflow-hidden">
       <Navbar />
 
-      <div className="flex px-16 h-[95vh]">
+      <div className="flex px-4 md:px-16 h-[95vh]">
         {/* Chat */}
         <div className="w-full">
           <ScrollArea className="h-[600px] rounded-md  p-4 ">
             <div className="w-full flex flex-col items-center justify-center bg-slate-100 p-10">
-              <img src={logo1} className="h-48" />
+              <img src={logo1} className="h-24 md:h-48" />
               <div className="flex flex-col items-center justify-center">
-                <h1 className="font-extrabold text-3xl">BitcoinPAL</h1>
-                <p>Personal Assistant for Bitcoin Learning</p>
+                <h1 className="font-extrabold text-xl md:text-3xl">BitcoinPAL</h1>
+                <p className="text-sm text-center">Personal Assistant for Bitcoin Learning</p>
               </div>
             </div>
             {responses?.map((data, id) => (
@@ -115,7 +115,7 @@ function ChatBox() {
       </div>
 
       {/* Input */}
-      <div className="px-2 lg:px-10 py-6 absolute bottom-0 lg:w-[80vw] flex items-center justify-center">
+      <div className="px-2 lg:px-10 py-6 absolute bottom-0 w-full md:lg:w-[80vw] flex items-center justify-center">
         <div className="px-2 lg:px-10   lg:w-full flex items-center justify-center">
           {/* <h1>Thissisisisi</h1> */}
           <div className="w-full">
