@@ -1,0 +1,63 @@
+name: 'gitPaid'
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths: ['source_documents/**']
+    types: [closed]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  LND_SERVER: ${{ secrets.LND_SERVER }}
+  LND_SSH_KEY: ${{ secrets.LND_SSH_KEY }}
+
+jobs:
+  gitPaid:
+    runs-on: ubuntu-latest
+    environment: AI4ALL
+    defaults:
+      run:
+        shell: bash
+
+    # Verify this is a merge event
+    if: ${{ github.event.pull_request.merged }} == 'true'
+    steps:
+
+    - name: Verify LND Connectivity
+      id: verify_lnd_connectivity
+      run: |
+        timeout 5 bash -c "</dev/tcp/$LND_SERVER/22"
+        if [ $? != '0' ]; then
+          echo "[ ERROR ] - The LND_SERVER Environment variable is failing to listen for SSH connections. Perhaps the Hackathon is over? Feel free to fork for yourself!"
+          exit 1
+        else
+          echo "[ INFO ] - The LND Server is connected and ready to go!"
+        fi
+
+
+    - name: Generate Invoice and Send Payment
+      id: generate_invoice_and_send_payment
+      continue-on-error: true # To display errmsg
+      run: |
+        # Genereate invoice
+        MEMO='Thank%20you%20for%20your%20contribution!' # Base64 encoded string
+        AMOUNT='85' # Sats to send
+        curl -s https://www.lnurlpay.com/${{ github.event.pull_request.title }}/$AMOUNT?comment=$MEMO > invoiceToParse.html
+        INV=$(cat invoiceToParse.html | tr '"' '\n' | grep lnbc)
+        if [ -z $INV ]; then
+          echo "Invalid lightning address. We will take your contribution, but you won't get paid!"
+          exit 1
+        fi
+
+        # Send Payment
+        echo "Paying LN Invoice: "$INV
+        key_path='/tmp/lnd_ssh_key.pem'
+        echo "${{ secrets.LND_SSH_KEY }}" > $key_path
+        chmod 600 $key_path
+        eval $(ssh-agent) > /dev/null
+        ssh-add $key_path
+        ssh -o StrictHostKeyChecking=no ubuntu@$LND_SERVER "/home/ubuntu/lnd-linux-amd64-v0.16.4-beta/lncli sendpayment --pay_req=$INV --force > /dev/null"

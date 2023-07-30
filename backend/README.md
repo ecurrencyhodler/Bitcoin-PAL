@@ -49,28 +49,17 @@ lncli newaddress p2wkh
 ```bash
 lncli walletbalance
 ```
-### While waiting, a good use of time is to setup a new linux user to be able to install LND under that account, to ultimately do a keysend back and fourth in a private channel. You can run the following to generate a new user:
-```bash
-new_user='bitcoinpal' # Change if you want
-sudo useradd -m $new_user
-sudo passwd $new_user # Remember password
-sudo usermod -G $(whoami) $new_user
-```
-### If your still waiting, educate yourself on the pros and cons of keysend vs typical invoicing:
-```txt
-* Typical invoicing (lnurl, lightning address, bolt11 invoice) requires the payee to first initiate creating an invoice with a predetermined amount.
-* Typical invoices are not reusable; one time use.
-* Keysend does not require interaction with payee, as the payer drafts the preimage.
-* Keysend does not provide provability of transaction, which is needed for merchants. Bolt12 includes support for offers, a form of invoicing that is reusable.
-* Keysend can only go to the public key of a valid lightning node. Thus, any users that don't run their own node cannot receive payment.
-* The node runner of the payee must have `accept-keysend=1` in their config, or the payment fails.
-* In summary, keysend is not practical for most transactions...yet. For now, it is best for donations, tipping, and compensating pull request contributors.
-```
-### Next step typically is to connect to some peers on the network. You can find some [here](https://1ml.com/search). At the same time, this project will be connecting to a peer on same machine, so optional, but standard part of process.
+### Next step typically is to connect to some peers on the network, and then open a channal. Note, some node runners set a minimum channel size above the minimum. You can find some [here](https://1ml.com/search). 
 ```bash
 lncli connect <pub_key>@<pub_address>:<port>
+lncli openchannel <pub_key> <millisats>
 ``` 
-#### TODO:
-* document keysend
-* script remotely calling keysend
-* create GHA w/ proper trigger to then call keysend
+### Now that we have a channel open, lets talk about generating an invoice. The ideal scenario is to be able to send sats over lightning to an address like you can do with bitcoin on L1. The problem is, that an invoice is first required, and coordination between payer and payee is usually required. There is another option we explored called keysend. The problem with that is it can only be sent to a node runner's public key, not a lightning address using an external ligtning node. So we solved the problem! We managed to interact with LNURL to create an invoice ourself, providing the lightning address, amount, and memo! Now things get interesting. To generate an invoice, simply think of a lightning address, memo, and amount. Then run this:
+```bash
+./lnd_gen_invoice.sh [lightning address] [(optional) memo] [(optional) sats]
+```
+### Now for the most exciting part, sending the payment. All you have to do is run this:
+```bash
+./lnd_send_payment.sh [invoice]
+```
+### Want to get paid sats automatically during this hackathon? Simply submit a PR adding files to the source_documents/ directory, and include your lightning address in the PR title...GitHub Actions will take care of the rest. How you say? Look for yourself [here](https://github.com/ecurrencyhodler/Bitcoin-PAL/tree/main/.github/workflows). You will be rewarded for helping us crowdsource input data for BitcoinPAL! We will all benefit from an improved model.

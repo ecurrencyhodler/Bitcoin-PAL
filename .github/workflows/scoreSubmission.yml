@@ -1,0 +1,36 @@
+name: 'scoreSubmission'
+
+on:
+  pull_request:
+    branches: main
+    paths: ['source_documents/**']
+    types: [opened, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  scoreSubmission:
+    name: 'scoreSubmission'
+    runs-on: ubuntu-latest
+    environment: AI4ALL
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Comment Score
+      id: comment_score
+      run: |
+        echo ${{ github.event.pull_request.title }}
+
+    - name: Comment PR
+      uses: thollander/actions-comment-pull-request@v2
+      with:
+        message: "Score: 85"
+        pr_number: ${{ github.event.pull_request.number }}
