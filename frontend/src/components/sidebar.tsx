@@ -81,7 +81,7 @@ function sidebar() {
               variant="outline"
               className="p-4 w-64 bg-black text-white"
             >
-              Tain and Earn
+              Train and Earn
             </Button>
             <Button
               onClick={() => navigate("/")}
