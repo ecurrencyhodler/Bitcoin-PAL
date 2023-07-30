@@ -1,6 +1,5 @@
 import React, { useState, ChangeEvent, MouseEvent, useEffect } from "react";
 import Navbar from "./nav";
-import Temp from "./temp";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Send } from "lucide-react";
@@ -11,28 +10,6 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import logo1 from "/logo1.png";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const data = [
-  {
-    question: "What is bitcoin",
-    answer:
-      "Jokester began sneaking into the castle in the middle of the \n night and leaving jokes all over the place: under the king's \npillow, in his soup, even in the royal toilet. The king was \nfurious, but he couldn't seem to stop Jokester. And then, one \nday, the people of the kingdom discovered that the jokes left by \nJokester were so funny that they couldn't help but laugh. And \nonce they started laughing, they couldn't stop.",
-  },
-  {
-    question: "What is bitcoin",
-    answer:
-      "Jokester began sneaking into the castle in the middle of the \n night and leaving jokes all over the place: under the king's \npillow, in his soup, even in the royal toilet. The king was \nfurious, but he couldn't seem to stop Jokester. And then, one \nday, the people of the kingdom discovered that the jokes left by \nJokester were so funny that they couldn't help but laugh. And \nonce they started laughing, they couldn't stop.",
-  },
-  {
-    question: "What is bitcoin",
-    answer:
-      "Jokester began sneaking into the castle in the middle of the \n night and leaving jokes all over the place: under the king's \npillow, in his soup, even in the royal toilet. The king was \nfurious, but he couldn't seem to stop Jokester. And then, one \nday, the people of the kingdom discovered that the jokes left by \nJokester were so funny that they couldn't help but laugh. And \nonce they started laughing, they couldn't stop.",
-  },
-  {
-    question: "What is bitcoin",
-    answer:
-      "Jokester began sneaking into the castle in the middle of the \n night and leaving jokes all over the place: under the king's \npillow, in his soup, even in the royal toilet. The king was \nfurious, but he couldn't seem to stop Jokester. And then, one \nday, the people of the kingdom discovered that the jokes left by \nJokester were so funny that they couldn't help but laugh. And \nonce they started laughing, they couldn't stop.",
-  },
-];
 
 interface responseSchema {
   question?: string;
@@ -60,20 +37,19 @@ function ChatBox() {
       });
       const answer: string = response.data;
       setResponses((prevState: responseSchema[]) => {
-        return [...prevState, { answer: "answer" }];
-      });
+        return prevState.map(entry =>  entry.question === question ? {...entry,answer} : entry)
+      })
     } catch (e: unknown) {
       console.log(e);
       // setResult({ error: "There was an error processing the request." });
       // setResponses((prevState: responseSchema[]) => {
       //   return [...prevState, {error: 'There was an error processing the request' }];
       // });
-      setResponses((prevState: responseSchema[]) => [
-        ...prevState,
-        { error: "There was" },
-      ]);
+      setResponses((prevState: responseSchema[]) => {
+        return prevState.map(entry =>  entry.question === question ? {...entry,error: 'there was an error'} : entry)
+      })
     }
-    // setQuestion("")
+    setQuestion("")
     setLoading(false);
   };
   console.log(responses);
