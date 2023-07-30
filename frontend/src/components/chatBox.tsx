@@ -1,15 +1,13 @@
-import  { useState, ChangeEvent, MouseEvent } from "react";
+import { useState, ChangeEvent, MouseEvent } from "react";
 import Navbar from "./nav";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Send } from "lucide-react";
-
+import axios from "axios";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import logo1 from "/logo1.png";
 import { Skeleton } from "@/components/ui/skeleton";
-import axios from "axios"
 
 interface responseSchema {
   question?: string;
@@ -24,7 +22,7 @@ function ChatBox() {
 
   const handleSubmit = async (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    console.log("The question is", question,loading);
+    console.log("The question is", question, loading);
     setResponses((prevState: responseSchema[]) => {
       return [...prevState, { question }];
     });
@@ -36,8 +34,10 @@ function ChatBox() {
       });
       const answer: string = response.data;
       setResponses((prevState: responseSchema[]) => {
-        return prevState.map(entry =>  entry.question === question ? {...entry,answer} : entry)
-      })
+        return prevState.map((entry) =>
+          entry.question === question ? { ...entry, answer } : entry
+        );
+      });
     } catch (e: unknown) {
       console.log(e);
       // setResult({ error: "There was an error processing the request." });
@@ -45,10 +45,14 @@ function ChatBox() {
       //   return [...prevState, {error: 'There was an error processing the request' }];
       // });
       setResponses((prevState: responseSchema[]) => {
-        return prevState.map(entry =>  entry.question === question ? {...entry,error: 'there was an error'} : entry)
-      })
+        return prevState.map((entry) =>
+          entry.question === question
+            ? { ...entry, error: "there was an error" }
+            : entry
+        );
+      });
     }
-    setQuestion("")
+    setQuestion("");
     setLoading(false);
   };
   console.log(responses);
@@ -56,29 +60,11 @@ function ChatBox() {
   // useEffect(() => {
   // },[currentResponse])
   return (
-    <div className="w-full flex flex-col ">
+    <div className="w-full flex flex-col max-h-screen overflow-hidden">
       <Navbar />
-      <div className="flex-grow px-16 py-6">
-        <div className="w-full  flex items-center justify-center">
-          {/* Tabs */}
-          <Tabs defaultValue="chat" className="w-[400px]">
-            <TabsList className="py-8 rounded-md bg-slate-200">
-              <TabsTrigger value="chat" className="p-4 w-48 ">
-                Chat with Bitcoin Pal
-              </TabsTrigger>
-              <TabsTrigger value="train" className="p-4 w-48">
-                Train and Earn
-              </TabsTrigger>
-            </TabsList>
-            {/* <TabsContent value="chat">
-              Make changes to your account here.
-            </TabsContent> */}
-            <TabsContent value="train">Redirect to Github</TabsContent>
-          </Tabs>
-        </div>
-
+      <div className="flex px-16 h-[95vh]">
         {/* Chat */}
-        <div className="h-5/6 lg:h-5/6 overflow-y-auto">
+        <div className="w-full">
           <ScrollArea className="h-[600px] rounded-md  p-4 ">
             {responses?.map((data, id) => (
               <div key={id} className="mt-4">
@@ -119,31 +105,35 @@ function ChatBox() {
           </ScrollArea>
         </div>
       </div>
-      <div className="px-2 lg:px-10 py-6  lg:w-full flex items-center justify-center">
-        {/* <h1>Thissisisisi</h1> */}
-        <div className="w-full">
-          {/* <Input /> */}
 
-          <div className="flex justify-center items-center space-x-2">
-            <Input
-              className="w-4/5 p-6"
-              type="text"
-              value={question}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setQuestion(e.target.value)
-              }
-              placeholder="Ask your Bitcoin Question here..."
-            />
-            <Button
-              className="w-20 p-6 bg-[#F3A417]"
-              type="submit"
-              onClick={handleSubmit}
-              onKeyPress={(e) => {
-                if (e.key === "Enter") console.log("Bhaina enter");
-              }}
-            >
-              <Send />
-            </Button>
+      {/* Input */}
+      <div className="px-2 lg:px-10 py-6 absolute bottom-0 lg:w-[80vw] flex items-center justify-center">
+        <div className="px-2 lg:px-10   lg:w-full flex items-center justify-center">
+          {/* <h1>Thissisisisi</h1> */}
+          <div className="w-full">
+            {/* <Input /> */}
+
+            <div className="flex justify-center items-center space-x-2">
+              <Input
+                className="w-4/5 p-6"
+                type="text"
+                value={question}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  setQuestion(e.target.value)
+                }
+                placeholder="Ask your Bitcoin Question here..."
+              />
+              <Button
+                className="w-20 p-6 bg-[#F3A417]"
+                type="submit"
+                onClick={handleSubmit}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter") console.log("Bhaina enter");
+                }}
+              >
+                <Send />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
