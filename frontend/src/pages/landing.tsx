@@ -43,7 +43,7 @@ export default function Landing() {
             variant="outline"
             className="p-6 w-64 hover:bg-black hover:text-white"
           >
-            Tain and Earn
+            Train and Earn
           </Button>
         </div>
         <div className="jus flex items-center justify-center gap-4">
