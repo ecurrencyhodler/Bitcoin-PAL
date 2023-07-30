@@ -1,31 +1,28 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import { Button } from "../src/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../src/components/ui/card";
-
 import "./App.css";
 import Sidebar from "./components/sidebar";
 import ChatBox from "./components/chatBox";
+import Landing from "./pages/landing";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-    <div className="flex">
-      <Sidebar />
-      <ChatBox />
-    </div>
-      
-      
+      <div className="flex">
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="flex w-full">
+                  <Sidebar />
+                  <ChatBox />
+                </div>
+              }
+            />
+            <Route path="/landing" element={<Landing />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </>
   );
 }

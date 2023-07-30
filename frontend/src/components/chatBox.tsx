@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, MouseEvent, useEffect } from "react";
+import  { useState, ChangeEvent, MouseEvent } from "react";
 import Navbar from "./nav";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import logo1 from "/logo1.png";
 import { Skeleton } from "@/components/ui/skeleton";
-
+import axios from "axios"
 
 interface responseSchema {
   question?: string;
@@ -21,11 +21,10 @@ function ChatBox() {
   const [question, setQuestion] = useState<string>();
   const [loading, setLoading] = useState<boolean>(false);
   const [responses, setResponses] = useState<responseSchema[]>([]);
-  const [answer, setAnswer] = useState<string>("");
 
   const handleSubmit = async (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    console.log("The question is", question);
+    console.log("The question is", question,loading);
     setResponses((prevState: responseSchema[]) => {
       return [...prevState, { question }];
     });
