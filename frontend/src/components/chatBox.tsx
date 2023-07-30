@@ -62,10 +62,18 @@ function ChatBox() {
   return (
     <div className="w-full flex flex-col max-h-screen overflow-hidden">
       <Navbar />
+
       <div className="flex px-16 h-[95vh]">
         {/* Chat */}
         <div className="w-full">
           <ScrollArea className="h-[600px] rounded-md  p-4 ">
+            <div className="w-full flex flex-col items-center justify-center bg-slate-100 p-10">
+              <img src={logo1} className="h-48" />
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="font-extrabold text-3xl">BitcoinPAL</h1>
+                <p>Personal Assistant for Bitcoin Learning</p>
+              </div>
+            </div>
             {responses?.map((data, id) => (
               <div key={id} className="mt-4">
                 {/* Question Box */}
