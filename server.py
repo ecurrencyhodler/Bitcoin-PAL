@@ -60,7 +60,6 @@ def process_query():
     start = time.time()
     res = qa(query)
     end = time.time()
-
     answer, docs = res['result'], res['source_documents']
 
     # Filter by Bitcoin keywords
@@ -73,11 +72,10 @@ def process_query():
                 "bitcoin improvement proposal", "bip-", "byzantine"]
 
     if not any(keyword in answer.lower() for keyword in keywords):
-        return jsonify({
-            "answer": "No bitcoin match found. Please consider uploading the relevant document to help train the model."
-        })
-
-    source_docs = [{'source': doc.metadata["source"], 'content': doc.page_content} for doc in docs]
+        answer = "No bitcoin match found. Please consider uploading the relevant document to help train the model."
+        source_docs = [{'source': "No sources found", 'content': ""}]
+    else:
+        source_docs = [{'source': doc.metadata["source"], 'content': doc.page_content} for doc in docs]
 
     result = {
         'query': query,
