@@ -1,4 +1,4 @@
-# Bitcoin PAL
+# Bitcoin-PAL
 We believe open-source LLMs will develop exponentially faster than closed-source LLMs. In light of this our team created Bitcoin-PAL, a bitcoin focused **AI chatbot** coupled with an **incentivized crowd-sourcing platform** to train and educate LLMs and users with **bitcoin**.
 
 Using Bitcoin-PAL, users can rely on and contribute to **trusted** and **vetted bitcoin documentation** rather than query the general internet and GPT models.
