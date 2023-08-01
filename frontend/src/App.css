@@ -1,0 +1,149 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  font-family: Arial;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+  animation: fadeIn 0.5s ease-in;
+  background-color: #f9f9f9; 
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; 
+}
+
+.title, .subtitle {
+  text-align: center;
+}
+
+.title {
+  margin: 0.1em 0 0.25em 0;
+  text-align: center;
+  font-size: 2.5em;
+  color: #3c4043; 
+}
+
+.subtitle {
+  font-weight: normal;
+  margin: 0;
+  font-size: 1.2em;
+  text-align: center;
+  color: #5f6368; 
+}
+
+.input-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 2em auto;
+}
+
+.input-box {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ebc368;
+  font-size: 1.2em;
+  transition: box-shadow 0.3s;
+  width: 90%; /* Increased width */
+}
+
+.input-box:focus {
+  box-shadow: 0 0 5px #ebc368;
+  border-color: #343a40;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, 
+                background-color .15s ease-in-out,
+                border-color .15s ease-in-out,
+                box-shadow .15s ease-in-out;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+.btn-dark:hover {
+    color: #fff;
+    background-color: #23272b;
+    border-color: #1d2124;
+}
+
+.submit-button {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #ebc368;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.2s;
+  font-size: 1.2em;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 10%;
+}
+
+.submit-button:hover {
+  background-color: #f3a417;
+  box-shadow: none;
+}
+
+.responses-section {
+  width: 100%;
+  max-width: 800px;
+  animation: slideIn 0.5s ease-in;
+}
+
+.loading-div,
+.response-div {
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 1em auto;
+  transition: all 0.2s;
+  background: #fff; 
+}
+
+.loading-div:hover,
+.response-div:hover {
+  transform: scale(1.02);
+}
+
+.loading-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
