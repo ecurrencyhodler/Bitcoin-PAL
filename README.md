@@ -1,9 +1,9 @@
 # Bitcoin-PAL
-We believe open-source LLMs will develop exponentially faster than closed-source LLMs. In light of this our team created Bitcoin-PAL, a bitcoin focused **AI chatbot** coupled with an **incentivized crowd-sourcing platform** to train and educate LLMs and users with **bitcoin**.
+We believe open-source LLMs will develop exponentially faster than closed-source LLMs. In light of this our team created Bitcoin-PAL, a bitcoin focused **AI chatbot** coupled with an **incentivized crowd-sourcing platform** to train and educate LLMs and users with **bitcoin**. 
 
 Using Bitcoin-PAL, users can rely on and contribute to **trusted** and **vetted bitcoin documentation** rather than query the general internet and GPT models.
 
-Bitcoin-PAL was built during the #aiforall hackathon which ran from July 1 - August 1, 2023.
+Bitcoin-PAL is a proof of concept and was built during the #aiforall hackathon which ran from July 1 - August 1, 2023.
 
 # Resources
 1. [Project Charter and User Stories](https://docs.google.com/document/d/1SNIwo1evh4KxonslYy0HhbsHSHQuQU8B6TuFWWzATPM/edit?usp=sharing)
