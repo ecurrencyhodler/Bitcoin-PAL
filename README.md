@@ -16,6 +16,7 @@
 </div>
 
 <br/>
+
 # Problem
  Where do users go for trusted Bitcoin educational resources? In the ever-changing and evolving world of Bitcoin, false information, distrust, and confusion about complex topics is common. This makes navigating the Bitcoin landscape challenging for many, especially for new users.
 
