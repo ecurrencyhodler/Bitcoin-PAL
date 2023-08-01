@@ -7,11 +7,10 @@ Bitcoin-PAL was built during the #aiforall hackathon which ran from July 1 - Aug
 
 # Resources
 1. [Project Charter and User Stories](https://docs.google.com/document/d/1SNIwo1evh4KxonslYy0HhbsHSHQuQU8B6TuFWWzATPM/edit?usp=sharing)
-2. [AI Project Ideas](https://docs.google.com/spreadsheets/d/1WP1VuDQA2vTBQawJORFOuXrarP-3hQyGErbPCKSQIpI/edit?usp=sharing)
-3. [Backend Documentation](https://github.com/ecurrencyhodler/Bitcoin-PAL/tree/main/backend)
-5. [Project Board](https://github.com/users/ecurrencyhodler/projects/4)
-6. [Figma designs](https://www.figma.com/file/K5CfpF43xBeTMZL9KCJEOZ/Bitcoin-PAL?type=design&node-id=13%3A505&mode=design&t=WOKDVJugadqeDqM5-1)
-7. [GitHub Actions](https://github.com/ecurrencyhodler/Bitcoin-PAL/tree/main/.github/workflows)
+1. [Backend Documentation](https://github.com/ecurrencyhodler/Bitcoin-PAL/tree/main/backend)
+1. [Project Board](https://github.com/users/ecurrencyhodler/projects/4)
+1. [Figma designs](https://www.figma.com/file/K5CfpF43xBeTMZL9KCJEOZ/Bitcoin-PAL?type=design&node-id=13%3A505&mode=design&t=WOKDVJugadqeDqM5-1)
+1. [GitHub Actions](https://github.com/ecurrencyhodler/Bitcoin-PAL/tree/main/.github/workflows)
 
 # Setup 
 
