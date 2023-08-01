@@ -10,6 +10,7 @@
 <div align="center">
 
 [![Bitcoin](https://img.shields.io/badge/Bitcoin-000?style=for-the-badge&logo=bitcoin&logoColor=white)](https://bitcoin.org) [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)[  ![React](https://img.shields.io/badge/react-000?style=for-the-badge&logo=react)](https://react.dev/) 
+<br/>
 [![GitHub tag](https://img.shields.io/github/tag/ecurrencyhodler/Bitcoin-PAL?include_prereleases=&sort=semver)](https://github.com/ecurrencyhodler/Bitcoin-PAL/releases/) [![License](https://img.shields.io/badge/License-MIT-blue)](#license)  [![issues - badge-generator](https://img.shields.io/github/issues/ecurrencyhodler/Bitcoin-PAL)](https://github.com/ecurrencyhodler/Bitcoin-PAL)
 
 </div>
