@@ -21,9 +21,9 @@
  Where do users go for trusted Bitcoin educational resources? In the ever-changing and evolving world of Bitcoin, false information, distrust, and confusion about complex topics is common. This makes navigating the Bitcoin landscape challenging for many, especially for new users.
 
 # Solution
-We believe open-source LLMs will develop exponentially faster than closed-source LLMs. In light of this our team created Bitcoin-PAL, a bitcoin focused **AI chatbot** coupled with an **incentivized crowd-sourcing platform** to train and educate LLMs and users with **bitcoin**. 
+We believe open-source LLMs will develop exponentially faster than closed-source LLMs. In light of this our team created Bitcoin-PAL, a bitcoin focused **AI chatbot** coupled with an **incentivized crowd-sourcing platform** to train LLMs with **bitcoin**. 
 
-Using Bitcoin-PAL, users can rely on and contribute to **trusted** and **vetted bitcoin documentation** rather than query the general internet and GPT models.
+Using Bitcoin-PAL, bitcoiners can rely on and contribute to **trusted** and **vetted bitcoin documentation** rather than query the general internet and GPT models.
 
 Bitcoin-PAL is a proof of concept and was built during the [#Ai4ALL](https://bolt.fun/tournaments/ai4all/overview) Hackathon presented by Bolt.fun, which ran from July 1 - August 1, 2023.
 
