@@ -25,7 +25,7 @@ We believe open-source LLMs will develop exponentially faster than closed-source
 
 Using Bitcoin-PAL, bitcoiners can rely on and contribute to **trusted** and **vetted bitcoin documentation** rather than query the general internet and GPT models.
 
-Bitcoin-PAL is a proof of concept and was built during the [#Ai4ALL](https://bolt.fun/tournaments/ai4all/overview) Hackathon presented by Bolt.fun, which ran from July 1 - August 1, 2023.
+Bitcoin-PAL is a proof of concept and was built during the [#Ai4ALL](https://bolt.fun/tournaments/ai4all/overview) Hackathon presented by Bolt.fun, which ran from July 1 - August 1, 2023. The project also were the [winners of the Training Track](https://twitter.com/fedibtc/status/1688617484155281408?s=20)!
 
 # Resources
 1. [Project Charter and User Stories](https://docs.google.com/document/d/1SNIwo1evh4KxonslYy0HhbsHSHQuQU8B6TuFWWzATPM/edit?usp=sharing)
