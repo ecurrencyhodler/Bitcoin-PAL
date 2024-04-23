@@ -1,4 +1,4 @@
-### Plans 📆
+### Plans 📆 
 
 - Introduce members of team again since we added a 4th member who is a front end developer.
     
