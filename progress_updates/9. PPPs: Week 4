@@ -1,0 +1,52 @@
+### Plans 📆
+
+*   What track do we want to enter? Agents/privacy/training/education.
+    
+*   Will our LLM have filter criteria and accept/reject submissions?
+    
+*   Deadline
+    
+*   Presentation
+    
+
+### Progress ✅
+
+Below are the minutes from our agenda.
+
+**Keysend vs LNURL (lightning address)**  
+Which method should we go with? We should go with lightning address. It's simpler UX and easier/faster to setup. Keysend-> no provability with txns i.e. no receipts.
+
+Look at LNURLPay to help create an invoice. Maybe npm library and call it straight from front end. Because invoice includes sats.
+
+**Which track should we enroll in?**  
+We felt like our project fit into multiple tracks (education, agents, and training). We ended up choosing training.
+
+**Will our LLM have filter criteria and accept/reject submissions?**  
+Originally tried to do scoring. But wasn't sure people would understand the scoring. We would need to explain it for users to understand. Implementing it would be really complicated too. We might need to create 2 LLM's or create a front-end check to review before submitting a PR to auto-merge.
+
+We do have bitcoin filters we're already using to focus LLM responses to bitcoin. We could use the same keyword filter when data is submitted to score data submissions. Maybe we would do this in github and narrow it down to github actions. If we go with github, we could leave a comment in the PR for the scoring.
+
+_Okay so we are going to get rid of the submission UI in the front end._ Instead we are going to do a data submission process through github. But we should still have a button in the UI that jumps to the github PR page.
+
+**Deadline**  
+Done by Saturday night so we have Sunday to prepare the presentation.
+
+**Mood**  
+We're all really excited and motivated. It's really impressive to see a ton of ownership in each person on the team. As a PM, it requires a lot of trust. But it is inspiring to see people come through even though they're busy with work/school/family. I'm honestly stunned by the amount of work we've been able to achieve in such a short period of time. I'm grateful for this team.
+
+### Problems ✋
+
+*   We had some internet issues with our frontend dev. He eventually was able to hop on the call. But will need to follow up with him after as there was still issues with hearing everything.
+    
+*   Surprise, surprise, our biggest problem was scope! I really wanted to include some type of automated filter criteria using an LLM with data submissions. But it looks like we won't be able to do that for the launch. Instead we decided to scope this part down to github and use github actions to score submissions. We will leave a note that in the future we would like to have the LLM involved with scoring data and have it incorporated directly into our project.
+    
+*   One big blocker for us is not knowing what the presentation criteria is. But we are going to plan as and prepare as much as possible ahead of time.
+    
+*   Another blocker we faced is choosing keysend vs. LNURL. We ended up choosing LNURL. It's easier to query plus there's proof of payment.
+    
+
+### Links 🔗
+
+*   Here are the [minutes from our agenda.](https://github.com/ecurrencyhodler/Bitcoin-PAL/discussions/15)
+    
+*   We are looking at this to help us with LNURLpay: [https://github.com/SamSamskies/lnurlpay](https://github.com/SamSamskies/lnurlpay)
