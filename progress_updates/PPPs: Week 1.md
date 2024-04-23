@@ -1,5 +1,5 @@
 The first couple of posts will be backdated. We are in our 3rd week but haven't posted because we didn't know what to call the name of our team or project.
-
+ 
 ### Plans 📆
 
 *   ecurrencyhodler, Ron, and Moonboy to hop on a call and get to know one another and brainstorm ideas for the hackathon. Our meeting was on July 7th.
